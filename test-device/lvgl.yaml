@@ -25,12 +25,9 @@ lvgl:
           
   pages:
     - id: main_page
-      layout:
+      layout: 
         type: flex
-        flex_flow: column
-        flex_align_main: space_evenly
-        flex_align_track: center
-        flex_align_cross: stretch
+        flex_flow: row_wrap
       width: 100%
       bg_color: Black
       bg_opa: cover
