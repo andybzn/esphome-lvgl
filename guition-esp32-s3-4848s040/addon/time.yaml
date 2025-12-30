@@ -8,6 +8,8 @@ time:
      - 1.pool.ntp.org
      - 2.pool.ntp.org
     on_time_sync:
+      - lambda: |-
+          ESP_LOGI("time", "Time synchronized!");
       - script.execute: time_update
     on_time:
       - minutes: '*'
@@ -19,9 +21,12 @@ time:
 script:
   - id: time_update
     then:
+      - lambda: |-
+          ESP_LOGI("time", "time_update script executing...");
       - lvgl.label.update:
           id: display_time
           text: !lambda |-
+            ESP_LOGI("time", "Inside lambda, checking time validity...");
             if (id(sntp_time).now().is_valid()) {
               auto now = id(sntp_time).now();
               char time_buf[17];
@@ -29,6 +34,12 @@ script:
               ESP_LOGI("time", "Updating time display to: %s", time_buf);
               return std::string(time_buf);
             } else {
-              ESP_LOGW("time", "Time not yet synced");
+              ESP_LOGW("time", "Time not yet synced, showing placeholder");
               return std::string("--:--");
             }
+
+# Periodically try to update time display (every 10 seconds)
+interval:
+  - interval: 10s
+    then:
+      - script.execute: time_update
