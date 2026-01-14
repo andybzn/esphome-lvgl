@@ -369,9 +369,9 @@ lvgl:
                   text: "--"
               - label:
                   text_font: roboto17_font
-                  align: top_left
-                  x: 52
-                  y: 12
+                  align_to:
+                    id: print_progress_label
+                    align: out_right_bottom
                   text: "%"
               - label:
                   align: bottom_left
