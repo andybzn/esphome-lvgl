@@ -227,14 +227,38 @@ lvgl:
             id: printer_power_button
             styles: control
             widgets:
+              # Icon (shown when OFF)
               - label:
                   text_font: $icon_font
                   align: top_left
                   id: printer_power_icon
                   text: $printer
+              # Progress (shown when ON)
+              - obj:
+                  align: top_left
+                  id: print_progress_container
+                  height: SIZE_CONTENT
+                  width: SIZE_CONTENT
+                  layout:
+                    type: flex
+                    flex_flow: row
+                    flex_align_cross: end
+                  bg_opa: TRANSP
+                  border_width: 0
+                  pad_all: 0
+                  hidden: true
+                  widgets:
+                    - label:
+                        text_font: roboto36_font
+                        text_color: 0xFFFFFF
+                        id: print_progress_label
+                        text: "--"
+                    - label:
+                        text_font: roboto17_font
+                        text_color: 0xFFFFFF
+                        text: "%"
               - label:
                   align: bottom_left
-                  id: printer_power_label
                   text: "Printer"
             on_click:
               - homeassistant.service:
@@ -352,37 +376,3 @@ lvgl:
                   service: light.toggle
                   data:
                     entity_id: light.office_network_rack
-
-        # Print Progress
-        - button: 
-            height: $button_height_single
-            width: $button_width
-            checkable: false
-            clickable: false
-            id: print_progress_button
-            styles: control
-            widgets:
-              - obj:
-                  align: top_left
-                  height: SIZE_CONTENT
-                  width: SIZE_CONTENT
-                  layout:
-                    type: flex
-                    flex_flow: row
-                    flex_align_cross: end
-                  bg_opa: TRANSP
-                  border_width: 0
-                  pad_all: 0
-                  widgets:
-                    - label:
-                        text_font: roboto36_font
-                        text_color: 0xFFFFFF
-                        id: print_progress_label
-                        text: "--"
-                    - label:
-                        text_font: roboto17_font
-                        text_color: 0xFFFFFF
-                        text: "%"
-              - label:
-                  align: bottom_left
-                  text: "Print Progress"

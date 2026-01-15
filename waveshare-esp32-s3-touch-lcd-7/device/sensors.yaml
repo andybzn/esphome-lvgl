@@ -97,10 +97,16 @@ binary_sensor:
     trigger_on_initial_state: true
     on_state:
       then:
-        lvgl.widget.update:
-          id: printer_power_button
-          state:
-            checked: !lambda return x;
+        - lvgl.widget.update:
+            id: printer_power_button
+            state:
+              checked: !lambda return x;
+        - lvgl.widget.update:
+            id: printer_power_icon
+            hidden: !lambda return x;
+        - lvgl.widget.update:
+            id: print_progress_container
+            hidden: !lambda return !x;
 
   # Office Aircon
   - platform: homeassistant
