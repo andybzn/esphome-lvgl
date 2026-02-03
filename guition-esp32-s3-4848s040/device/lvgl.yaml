@@ -101,7 +101,6 @@ lvgl:
         - button: 
             height: $button_height_single
             width: $button_width
-            flex_grow: 1
             checkable: false
             id: office_scene_features_button
             styles: control
@@ -139,7 +138,6 @@ lvgl:
         - button: 
             height: $button_height_single
             width: $button_width
-            flex_grow: 1
             checkable: false
             id: office_scene_calls_button
             styles: control
@@ -177,7 +175,6 @@ lvgl:
         - button: 
             height: $button_height_single
             width: $button_width
-            flex_grow: 1
             checkable: false
             id: office_scene_evening_button
             styles: control
@@ -215,7 +212,6 @@ lvgl:
         - button: 
             height: $button_height_single
             width: $button_width
-            flex_grow: 1
             checkable: false
             id: office_scene_dimmed_button
             styles: control
@@ -244,7 +240,6 @@ lvgl:
         - button: 
             height: $button_height_single
             width: $button_width
-            flex_grow: 1
             checkable: false
             id: blinds_nav_button
             styles: control
@@ -280,7 +275,6 @@ lvgl:
         - button: 
             height: $button_height_single
             width: $button_width
-            flex_grow: 1
             checkable: true
             id: printer_power_button
             styles: control
@@ -347,7 +341,6 @@ lvgl:
         - button: 
             height: $button_height_single
             width: $button_width
-            flex_grow: 1
             checkable: true
             id: filament_heater_button
             styles: control
@@ -413,7 +406,6 @@ lvgl:
         - button: 
             height: $button_height_single
             width: $button_width
-            flex_grow: 1
             checkable: true
             id: office_aircon_button
             styles: control
@@ -450,7 +442,6 @@ lvgl:
         - button: 
             height: $button_height_single
             width: $button_width
-            flex_grow: 1
             checkable: true
             id: battery_charger_button
             styles: control
@@ -486,7 +477,6 @@ lvgl:
         - button: 
             height: $button_height_single
             width: $button_width
-            flex_grow: 1
             checkable: true
             id: storage_lights_button
             styles: control
@@ -520,7 +510,6 @@ lvgl:
         - button: 
             height: $button_height_single
             width: $button_width
-            flex_grow: 1
             checkable: true
             id: network_rack_button
             styles: control
@@ -560,7 +549,6 @@ lvgl:
         - button: 
             height: $button_height_single
             width: $button_width
-            flex_grow: 1
             checkable: false
             id: blinds_back_button
             styles: control
@@ -596,7 +584,6 @@ lvgl:
         - button: 
             height: $button_height_single
             width: $button_width
-            flex_grow: 1
             checkable: true
             id: office_blind_open_button
             styles: control
@@ -635,7 +622,6 @@ lvgl:
         - button: 
             height: $button_height_single
             width: $button_width
-            flex_grow: 1
             checkable: true
             id: office_blind_66_button
             styles: control
@@ -674,7 +660,6 @@ lvgl:
         - button: 
             height: $button_height_single
             width: $button_width
-            flex_grow: 1
             checkable: true
             id: office_blind_33_button
             styles: control
@@ -713,7 +698,6 @@ lvgl:
         - button: 
             height: $button_height_single
             width: $button_width
-            flex_grow: 1
             checkable: true
             id: office_blind_close_button
             styles: control
