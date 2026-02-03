@@ -68,20 +68,27 @@ lvgl:
           
   pages:
     - id: experiment_page
-      layout: 
-        type: flex
-        flex_flow: column_wrap
       scrollbar_mode: "off"
-      scroll_dir: "hor"
+      scroll_dir: "none"
       width: 100%
       bg_color: Black
       bg_opa: cover
-      pad_top: 34
-      pad_bottom: 5
-      pad_left: 5
-      pad_right: 5
+      pad_top: 10
+      pad_bottom: 10
+      pad_left: 10
+      pad_right: 10
 
       widgets:
+
+        # =========================================================================
+        # LABEL: Large Clock
+        # =========================================================================
+        - label:
+            text: "--:--"
+            id: experiment_time
+            text_font: roboto48_font
+            text_color: 0xFFFFFF
+            align: center
 
         # =========================================================================
         # BUTTON: Home (Go to Main Page)
@@ -92,6 +99,8 @@ lvgl:
             checkable: false
             id: experiment_back_button
             styles: control
+            align: bottom_mid
+            y: 0
             widgets:
               - label:
                   text_font: $icon_font
