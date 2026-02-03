@@ -976,14 +976,16 @@ lvgl:
                   y: 60
                   width: 400
                   height: 400
-                  min_value: 16
-                  max_value: 30
+                  min_value: 8
+                  max_value: 25
                   start_angle: 135
                   end_angle: 45
                   rotation: 0
                   value: 22
                   arc_width: 18
                   arc_color: 0x2A2A2A
+                  clickable: true
+                  adjustable: true
                   indicator:
                     arc_color: 0x2E6B2E
                     arc_width: 18
@@ -995,6 +997,28 @@ lvgl:
                         data:
                           entity_id: climate.office_air_conditioner
                           temperature: !lambda return x;
+
+              # Arc indicator for current temperature (read-only)
+              - arc:
+                  id: aircon_current_arc
+                  x: 40
+                  y: 60
+                  width: 400
+                  height: 400
+                  min_value: 8
+                  max_value: 25
+                  start_angle: 135
+                  end_angle: 45
+                  rotation: 0
+                  value: 22
+                  arc_width: 6
+                  arc_color: 0x000000
+                  indicator:
+                    arc_color: 0x7A7A7A
+                    arc_width: 6
+                  knob:
+                    bg_color: 0x000000
+                  clickable: false
 
               # Mode label
               - label:

@@ -156,6 +156,9 @@ sensor:
           text:
             format: "%.0f°"
             args: [ 'x' ]
+      - lvgl.arc.update:
+          id: aircon_current_arc
+          value: !lambda return (int)x;
 
   # ===========================================================================
   # SENSOR: Aircon Target Temperature
