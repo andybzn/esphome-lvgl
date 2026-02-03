@@ -743,6 +743,9 @@ lvgl:
                   text_font: $icon_font
                   align: top_left
                   text: $chevron_left
+              - label:
+                  align: bottom_left
+                  text: "Back"
             on_click:
               - lvgl.page.show: main_page
 
@@ -960,6 +963,9 @@ lvgl:
                         text_font: $icon_font
                         align: left_mid
                         text: $chevron_left
+                    - label:
+                        align: right_mid
+                        text: "Back"
                   on_click:
                     - lvgl.page.show: aircon_page
 
