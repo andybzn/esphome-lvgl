@@ -439,6 +439,114 @@ lvgl:
             on_click:
               - lvgl.page.show: heating_lab_page
 
+        # =========================================================================
+        # BUTTON: Battery Charger
+        # =========================================================================
+        # WHAT THIS BUTTON DOES:
+        #   Toggles the battery charger's smart plug.
+        #
+        # WHEN PRESSED:
+        #   Calls Home Assistant service: switch.toggle
+        #   Target: switch.d4c5
+        #
+        # HOW THE BUTTON KNOWS IF IT'S ACTIVE:
+        #   sensors.yaml monitors: switch.d4c5
+        #   When the switch is ON, this button appears "checked" (highlighted)
+        # =========================================================================
+        - button:
+            height: $button_height_single
+            width: $button_width
+            checkable: true
+            id: battery_charger_button
+            styles: control
+            widgets:
+              - label:
+                  text_font: $icon_font
+                  align: top_left
+                  id: battery_charger_icon
+                  text: $battery
+              - label:
+                  align: bottom_left
+                  id: battery_charger_label
+                  text: "Charger"
+            on_click:
+              - homeassistant.service:
+                  service: switch.toggle
+                  data:
+                    entity_id: switch.d4c5
+
+        # =========================================================================
+        # BUTTON: Storage Lights
+        # =========================================================================
+        # WHAT THIS BUTTON DOES:
+        #   Toggles the office storage area lights.
+        #
+        # WHEN PRESSED:
+        #   Calls Home Assistant service: light.toggle
+        #   Target: light.office_storage
+        #
+        # HOW THE BUTTON KNOWS IF IT'S ACTIVE:
+        #   sensors.yaml monitors: light.office_storage
+        #   When the light is ON, this button appears "checked" (highlighted)
+        # =========================================================================
+        - button:
+            height: $button_height_single
+            width: $button_width
+            checkable: true
+            id: storage_lights_button
+            styles: control
+            widgets:
+              - label:
+                  text_font: $icon_font
+                  align: top_left
+                  id: storage_lights_icon
+                  text: $package
+              - label:
+                  align: bottom_left
+                  id: storage_lights_label
+                  text: "Storage"
+            on_click:
+              - homeassistant.service:
+                  service: light.toggle
+                  data:
+                    entity_id: light.office_storage
+
+        # =========================================================================
+        # BUTTON: Network Rack Lights
+        # =========================================================================
+        # WHAT THIS BUTTON DOES:
+        #   Toggles the network rack lights.
+        #
+        # WHEN PRESSED:
+        #   Calls Home Assistant service: light.toggle
+        #   Target: light.office_network_rack
+        #
+        # HOW THE BUTTON KNOWS IF IT'S ACTIVE:
+        #   sensors.yaml monitors: light.office_network_rack
+        #   When the light is ON, this button appears "checked" (highlighted)
+        # =========================================================================
+        - button:
+            height: $button_height_single
+            width: $button_width
+            checkable: true
+            id: network_rack_button
+            styles: control
+            widgets:
+              - label:
+                  text_font: $icon_font
+                  align: top_left
+                  id: network_rack_icon
+                  text: $network
+              - label:
+                  align: bottom_left
+                  id: network_rack_label
+                  text: "Network Rack"
+            on_click:
+              - homeassistant.service:
+                  service: light.toggle
+                  data:
+                    entity_id: light.office_network_rack
+
     - id: blinds_page
       layout: 
         type: flex
