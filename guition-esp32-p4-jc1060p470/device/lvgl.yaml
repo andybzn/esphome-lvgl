@@ -1,5 +1,5 @@
 lvgl:
-  display_id: my_display
+  displays: my_display
   byte_order: little_endian
   
   top_layer:
