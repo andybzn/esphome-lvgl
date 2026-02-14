@@ -2,8 +2,6 @@
 
 Welcome to my ESPHome LVGL configuration repository! This project provides a modular setup for ESP32 touch LCD devices using the LVGL graphics library, designed specifically for home automation and sensor monitoring.
 
-![ESP32-S3 Touch LCD Device](device.jpg)
-
 *7-inch touch LCD display running ESPHome with LVGL interface, showing home automation controls including temperature display, printer status, air conditioning controls, and various smart home features.*
 
 ## Purpose
@@ -20,13 +18,21 @@ This repository contains ESPHome configurations for creating beautiful, touch-en
 - **Network & Time**: Automatic network connectivity and time synchronization
 - **Backlight Control**: Intelligent display brightness management
 
+## Supported Devices
+
+| Device | Preview |
+|--------|--------|
+| **Guition ESP32-P4 JC1060P470** (7", ~£40) | ![Guition ESP32-P4 JC1060P470](guition-esp32-p4-jc1060p470.jpg) |
+| **Guition ESP32-S3 4848S040** (4.0", ~£16) | ![Guition ESP32-S3 4848S040](guition-esp32-s3-4848s040.jpg) |
+| **Waveshare ESP32-S3 Touch LCD 7"** (~£40) | ![Waveshare ESP32-S3 Touch LCD 7](waveshare-esp32-s3-touch-lcd-7.jpg) |
+
 ## Where to Buy
 
-You can find the supported panels on AliExpress. Links are placeholders for now.
-
-- **Guition ESP32-P4 JC1060P470 (7", around £40)**: https://s.click.aliexpress.com/e/_c335W0r5
-- **Guition ESP32-S3 4848S040 (4.0", around £16)**: https://s.click.aliexpress.com/e/_c3sIhvBv
-- **Waveshare ESP32-S3 Touch LCD 7", around £40)**: https://s.click.aliexpress.com/e/_c37ljk8J
+| Device | Configuration | Where to Buy |
+|--------|---------------|--------------|
+| Guition ESP32-P4 JC1060P470 (7") | [esphome.yaml](guition-esp32-p4-jc1060p470/esphome/esphome.yaml) | [AliExpress](https://s.click.aliexpress.com/e/_c335W0r5) |
+| Guition ESP32-S3 4848S040 (4.0") | [template.yaml](guition-esp32-s3-4848s040/esphome/template.yaml) | [AliExpress](https://s.click.aliexpress.com/e/_c3sIhvBv) |
+| Waveshare ESP32-S3 Touch LCD 7" | [esphome.yaml](waveshare-esp32-s3-touch-lcd-7/esphome/esphome.yaml) | [AliExpress](https://s.click.aliexpress.com/e/_c37ljk8J) |
 
 
 ## Quick Start
@@ -37,7 +43,7 @@ You can find the supported panels on AliExpress. Links are placeholders for now.
 
 ### 2. Use a Device Template
 
-Pick the template for your specific device and start from that file:
+Pick the esphome.yaml template for your specific device and start from that file:
 
 ```yaml
 # Example: guition-esp32-s3-4848s040/esphome/template.yaml
@@ -49,7 +55,7 @@ substitutions:
 
 ### 3. Update WiFi and Secrets
 
-Set your WiFi credentials in the Esphome secrets file:
+Set your WiFi credentials in the Esphome secrets file, in the esphome dashboard, in the top right under the secrets button.
 
 ```yaml
 wifi_ssid: "Your_WiFi_SSID"
@@ -66,30 +72,6 @@ Each template pulls in modular components that you can customize:
 - **Add-ons**: Time, backlight, and network configurations in `addon/`
 - **Assets**: Custom fonts and icons in `assets/`
 - **Theme**: Button styling and UI components in `theme/`
-
-## Repository Structure
-
-```
-├── guition-esp32-p4-jc1060p470/          # Guition ESP32-P4 10.6" panel
-│   ├── addon/                            # Optional add-on components
-│   ├── assets/                           # Fonts and icons
-│   ├── device/                           # Device config, sensors, LVGL
-│   ├── esphome/                          # ESPHome template
-│   └── theme/                            # UI styling
-├── guition-esp32-s3-4848s040/            # Guition ESP32-S3 4.0" panel
-│   ├── addon/
-│   ├── assets/
-│   ├── device/
-│   ├── esphome/
-│   └── theme/
-├── waveshare-esp32-s3-touch-lcd-7/       # Waveshare ESP32-S3 7" panel
-│   ├── addon/
-│   ├── assets/
-│   ├── device/
-│   ├── esphome/
-│   └── theme/
-└── spares/                               # Extra components and experiments
-```
 
 ## Getting Started with ESPHome
 
