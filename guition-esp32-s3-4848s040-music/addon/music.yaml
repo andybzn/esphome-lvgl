@@ -8,13 +8,11 @@
 http_request:
   id: http_req
 
-# Placeholder shown while album art is loading or when no art is available
+# Placeholder shown while album art is loading or when no art is available.
+# Single placeholder reused for both foreground and background to save flash (480x480 would exceed flash).
 image:
   - file: "https://placehold.co/150x150/2d2d2d/555555"
     id: album_art_placeholder
-    type: rgb565
-  - file: "https://placehold.co/480x480/2d2d2d/555555"
-    id: album_art_background_placeholder
     type: rgb565
 
 # Dynamic album art from media_player entity_picture (URL set by sensors.yaml).
@@ -32,11 +30,11 @@ online_image:
           src: album_art_image
 
   # Full-screen background (same URL, scaled up); soft look via opacity in LVGL.
-  - url: "https://placehold.co/480x480/2d2d2d/555555"
+  - url: "https://placehold.co/150x150/2d2d2d/555555"
     id: album_art_background
     type: rgb565
     format: jpeg
-    placeholder: album_art_background_placeholder
+    placeholder: album_art_placeholder
     resize: 480x480
     on_download_finished:
       - lvgl.image.update:
