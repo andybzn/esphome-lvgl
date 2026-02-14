@@ -23,13 +23,13 @@ lvgl:
       pad_right: 0
 
       widgets:
-        # Full-width artwork background (content height 456 with pad top/bottom 12)
+        # Full-screen artwork background (negative offsets cancel page padding)
         - image:
             id: album_art_background_widget
             x: 0
-            y: 0
+            y: -12
             width: 480px
-            height: 456px
+            height: 480px
             src: album_art_background
             opa: 70%
 
