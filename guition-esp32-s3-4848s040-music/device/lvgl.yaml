@@ -61,7 +61,7 @@ lvgl:
         # Play/pause: two icon labels; visibility toggled by sensors.yaml from state
         - button:
             id: media_play_pause_button
-            x: 308
+            x: 396
             y: 344
             width: 72px
             height: 72px
