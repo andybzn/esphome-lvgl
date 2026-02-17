@@ -1,8 +1,8 @@
 # ESP32-S3-Touch-LCD-7
 substitutions:
-  name: "your-device-name"
-  friendly_name: "Your Room Sensor"
-  room: "Your Room"
+  name: "controlpad"
+  friendly_name: "Control Pad"
+  room: "Office"
 
 # Wifi Setup
 wifi:
@@ -12,7 +12,7 @@ wifi:
 # Packages
 packages:
   setup:
-    url: https://github.com/jtenniswood/esphome-lvgl/
+    url: https://github.com/andybzn/esphome-lvgl/
     files: [guition-esp32-s3-4848s040/device/device.yaml,
             guition-esp32-s3-4848s040/device/sensors.yaml,
             guition-esp32-s3-4848s040/device/lvgl.yaml,
