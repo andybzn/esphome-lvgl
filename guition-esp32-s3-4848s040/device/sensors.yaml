@@ -334,7 +334,7 @@ text_sensor:
   # ===========================================================================
   - platform: homeassistant
     entity_id: sensor.3d_printer_progress
-    id: 3d_printer_progress
+    id: prusa_mk3s_printer_progress
     on_value:
       - lvgl.label.update:
           id: print_progress_label
