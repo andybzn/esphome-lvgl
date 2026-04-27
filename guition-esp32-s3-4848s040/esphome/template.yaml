@@ -2,7 +2,7 @@
 substitutions:
   name: "controlpad"
   friendly_name: "Control Pad"
-  room: "Office"
+  room: "Andy's Office"
 
 # Wifi Setup
 wifi:

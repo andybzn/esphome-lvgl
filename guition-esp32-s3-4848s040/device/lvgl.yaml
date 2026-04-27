@@ -122,7 +122,7 @@ lvgl:
               - homeassistant.service:
                   service: switch.toggle
                   data:
-                    entity_id: switch.office_features_stateful_scene
+                    entity_id: switch.office_features
 
         # =========================================================================
         # BUTTON: Calls Scene
@@ -403,7 +403,7 @@ lvgl:
                     entity_id: switch.office_filament_heater_893b
 
         # =========================================================================
-        # BUTTON: Air Conditioner
+        # BUTTON: Air Purifier
         # =========================================================================
         # WHAT THIS BUTTON DOES:
         #   Opens the air conditioner control page.
@@ -420,7 +420,7 @@ lvgl:
             height: $button_height_single
             width: $button_width
             checkable: true
-            id: office_aircon_button
+            id: office_air_purifier_button
             styles: control
             grid_cell_column_pos: 1
             grid_cell_row_pos: 2
@@ -428,16 +428,16 @@ lvgl:
               - label:
                   text_font: $icon_font
                   align: top_left
-                  text: $aircon
+                  text: $air_purifier
               - label:
                   align: bottom_left
-                  text: "Aircon"
+                  text: "Air Purifier"
             on_click:
               - lvgl.page.show: aircon_page
               - lvgl.widget.update:
                   id: office_aircon_button
                   state:
-                    checked: !lambda return id(office_air_conditioner).state;
+                    checked: !lambda return id(office_air_purifier).state;
 
         # =========================================================================
         # BUTTON: More

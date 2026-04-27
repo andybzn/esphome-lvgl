@@ -470,7 +470,7 @@ binary_sensor:
   # ===========================================================================
   - platform: homeassistant
     id: office_scene_features
-    entity_id: switch.office_features_stateful_scene
+    entity_id: switch.office_features
     trigger_on_initial_state: true
     on_state:
       then:
@@ -526,17 +526,17 @@ binary_sensor:
   #   lvgl.yaml → office_aircon_button
   # ===========================================================================
   - platform: homeassistant
-    id: office_air_conditioner
-    entity_id: switch.office_air_conditioner
+    id: office_air_purifier
+    entity_id: switch.office_air_purifier
     trigger_on_initial_state: true
     on_state:
       then:
         - lvgl.widget.update:
-            id: office_aircon_button
+            id: office_air_purifier_button
             state:
               checked: !lambda return x;
         - lvgl.widget.update:
-            id: aircon_power_button
+            id: air_purifier__button
             state:
               checked: !lambda return x;
         - lvgl.widget.update:
