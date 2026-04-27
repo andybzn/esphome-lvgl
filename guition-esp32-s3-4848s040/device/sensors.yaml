@@ -536,7 +536,7 @@ binary_sensor:
             state:
               checked: !lambda return x;
         - lvgl.widget.update:
-            id: air_purifier__button
+            id: air_purifier_button
             state:
               checked: !lambda return x;
         - lvgl.widget.update:
